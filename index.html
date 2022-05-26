@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <h1>🤓 Flex Grow ed i suoi calcoli </h1>
+    <h3>Funziona solo se i child hanno flex-grow > 0 </h3>
+    <p>Caso del grow: in totale abbiamo un contenitore largo 1000px e gli elementi all'interno occupano (100px * 5 = 500px). Ci avanzano 500px!</p>
+    <p>I 500 px "rimanenti" sono suddivisi tra i vari div. Il calcolo che fa flex è: <br>
+        <ul>
+            <li>sommo il valore di tutti i grow (1+1+3+1+1 = 7)</li>
+            <li>divido i pixel che mi avanzano nel numero appena calcolato: 500/7=71,43</li>
+            <li>Per ogni elemento, alla sua "larghezza" base (flex-basis) aggiungo il valore del suo fattore grow * il numero di sopra</li>
+        </ul>
+    </p>
+
+    <div class="flex">
+        <div class="itemSmall grow1 green">1</div>
+        <div class="itemSmall grow1 blue">2</div>
+        <div class="itemSmall grow3 red">3</div>
+        <div class="itemSmall grow1 yellow">4</div>
+        <div class="itemSmall grow1 purple">5</div>
+    </div>
+
+    <hr>
+
+    <h1>🤓 Flex Shrink ed i suoi calcoli</h1>
+    <h3>Funziona solo se i child hanno flex-shrink > 0 </h3>
+    <p>Caso del grow: in totale abbiamo un contenitore largo 1000px e gli elementi all'interno occupano (500px * 5 = 1500px). Ci mancano 500!</p>
+    <p>I 500 px "mancanti" sono sottratti tra i vari div. Il calcolo che fa flex è: <br>
+        <ul>
+            <li>sommo il valore di tutti gli shrink (1+1+3+1+1 = 7)</li>
+            <li>divido i pixel che mi avanzano nel numero appena calcolato: 500/7=71,43</li>
+            <li>Per ogni elemento, alla sua "larghezza" base (flex-basis) sottraggo il valore del suo fattore shrink * il numero di sopra</li>
+            <li>Se il valore che ottengo è inferiore alla dimensione del contenuto... lascio comunque il valore del contenuto e continuo a strizzare gli altri. Se proprio non riesco a fare entrare tutti i content... gli item usciranno dalla larghezza massima ammissibile del padre (overflow). </li>
+        </ul>
+    </p>
+
+    <div class="flex">
+        <div class="itemBig shrink1 green">1</div>
+        <div class="itemBig shrink1 blue">2</div>
+        <div class="itemBig shrink3 red">3</div>
+        <div class="itemBig shrink1 yellow">4</div>
+        <div class="itemBig shrink1 purple">5</div>
+    </div>
+
+
+</body>
+</html>

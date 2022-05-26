@@ -1,0 +1,55 @@
+
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px red;
+    height: 200px;
+    max-width: 1000px;
+}
+
+.itemSmall {
+    flex-basis: 100px;
+}
+
+.itemBig {
+    flex-basis: 300px;
+}
+
+.grow1 {
+    flex-grow: 1;
+}
+
+.grow3 {
+    flex-grow: 3;
+}
+
+
+.shrink1 {
+    flex-shrink: 1;
+}
+
+.shrink3 {
+    flex-shrink: 3;
+}
+
+
+
+
+
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.red {
+    background-color: red;
+}
+.yellow {
+    background-color: yellow;
+}
+.purple {
+    background-color: purple;
+}
