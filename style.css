@@ -1,22 +1,24 @@
 
-
+/* Settiamo flex */ 
 .flex {
     display: flex;
     justify-content: center;
     align-items: center;
     border: solid 2px red;
     height: 200px;
-    max-width: 1000px;
+    max-width: 1000px; /* importante per simulare i casi di grow e shrink */
 }
 
+/* simuliamo dei contenuti */ 
 .itemSmall {
-    flex-basis: 100px;
+    flex-basis: 100px; /* questa misura NON è tassativa, ma indicativa in flex! */
 }
 
 .itemBig {
-    flex-basis: 300px;
+    flex-basis: 300px; /* questa misura NON è tassativa, ma indicativa in flex! */
 }
 
+/* regole di grow */ 
 .grow1 {
     flex-grow: 1;
 }
@@ -25,7 +27,7 @@
     flex-grow: 3;
 }
 
-
+/* regole di shrink */ 
 .shrink1 {
     flex-shrink: 1;
 }
@@ -35,9 +37,7 @@
 }
 
 
-
-
-
+/* colori */
 .green {
     background-color: green;
 }
